@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "817002351554",
+    "project_id": "taskie-ebe08",
+    "storage_bucket": "taskie-ebe08.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:817002351554:android:a2039ae2b409cb732ba45b",
+        "android_client_info": {
+          "package_name": "gbo.studio.taskie"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "817002351554-bhfuqev10pevg8hp7lo4fgfl8qmbh0h8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAzTgoNNmpyQN5-P82NxSWRqmCGAhmc_Jw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "817002351554-bhfuqev10pevg8hp7lo4fgfl8qmbh0h8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
