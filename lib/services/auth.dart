@@ -1,5 +1,6 @@
 import 'package:taskie/models/user.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:taskie/services/database.dart';
 
 class AuthService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -43,6 +44,10 @@ class AuthService {
     try {
       UserCredential result = await _auth.createUserWithEmailAndPassword(email: email, password: password);
       User? firebaseUser = result.user;
+
+      // Create a new document for the user with the uid
+      await DatabaseService(uid: firebaseUser!.uid).updateUserData('new tasker', email);
+
       return _userFromFirebaseUser(firebaseUser);
     } catch(e) {
       print(e.toString());

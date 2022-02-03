@@ -71,7 +71,7 @@ class _RegisterState extends State<Register> {
                 style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all<Color?>(Colors.pinkAccent[200]),
                 ),
-                child: Text(
+                child: const Text(
                   'Register',
                   style: TextStyle(color: Colors.white),
                 ),
@@ -87,7 +87,7 @@ class _RegisterState extends State<Register> {
               SizedBox(height: 12.0),
               Text(
                 error,
-                style: TextStyle(color: Colors.red, fontSize: 14.0),
+                style: const TextStyle(color: Colors.red, fontSize: 14.0),
               )
             ],
           ),
