@@ -26,47 +26,49 @@ class _AddTaskState extends State<AddTask> {
     final user = Provider.of<taskieUser?>(context);
     DateTime now = new DateTime.now();
     created = DateFormat('yMd').format(now);
-    return Form(
-      key: _formKey,
-      child: Column(
-        children: <Widget>[
-          Text(
-            'Created: ${created.toString()}',
-            style: TextStyle(fontSize: 18.0),
-          ),
-          SizedBox(height: 20.0),
-          TextFormField(
-            decoration: taskInputDecoration.copyWith(hintText: 'Task'),
-            validator: (val) =>
-            val!.length > 100
-                ? 'Please enter simple task'
-                : null,
-            onChanged: (val) => setState(() => content = val),
-          ),
-          SizedBox(height: 20.0),
-          ElevatedButton(
-            child: const Text(
-              'Add',
-              style: TextStyle(color: Colors.white),
+    return Container(
+      child: Form(
+        key: _formKey,
+        child: Column(
+          children: <Widget>[
+            Text(
+              'Created: ${created.toString()}',
+              style: TextStyle(fontSize: 18.0),
             ),
-            style: ElevatedButton.styleFrom(
-              primary: Colors.pink[400],
+            SizedBox(height: 20.0),
+            TextFormField(
+              decoration: taskInputDecoration.copyWith(hintText: 'Task'),
+              validator: (val) =>
+              val!.length > 100
+                  ? 'Please enter simple task'
+                  : null,
+              onChanged: (val) => setState(() => content = val),
             ),
-            onPressed: () {
-              if (_formKey.currentState!.validate()) {
-                setState(() {
-                  DatabaseService(uid: user!.uid).addTask(content, created);
-                });
-                Navigator.pop(context);
-              }
-            },
-          ),
-          SizedBox(height: 12.0),
-          Text(
-            error,
-            style: TextStyle(color: Colors.red, fontSize: 14.0),
-          )
-        ],
+            SizedBox(height: 20.0),
+            ElevatedButton(
+              child: const Text(
+                'Add',
+                style: TextStyle(color: Colors.white),
+              ),
+              style: ElevatedButton.styleFrom(
+                primary: Colors.pink[300],
+              ),
+              onPressed: () {
+                if (_formKey.currentState!.validate()) {
+                  setState(() {
+                    DatabaseService(uid: user!.uid).addTask(content, created);
+                  });
+                  Navigator.pop(context);
+                }
+              },
+            ),
+            SizedBox(height: 12.0),
+            Text(
+              error,
+              style: TextStyle(color: Colors.red, fontSize: 14.0),
+            )
+          ],
+        ),
       ),
     );
   }

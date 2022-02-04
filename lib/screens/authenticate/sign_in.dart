@@ -25,7 +25,7 @@ class _SignInState extends State<SignIn> {
     return Scaffold(
       backgroundColor: Colors.pink[100],
       appBar: AppBar(
-        backgroundColor: Colors.pinkAccent[200],
+        backgroundColor: Colors.pink[300],
         elevation: 0.0,
         title: Text('Sign in to taskie'),
         actions: <Widget>[
@@ -67,7 +67,7 @@ class _SignInState extends State<SignIn> {
               SizedBox(height: 20.0),
               ElevatedButton(
                 style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all<Color?>(Colors.pinkAccent[200]),
+                  backgroundColor: MaterialStateProperty.all<Color?>(Colors.pink[300]),
                 ),
                 child: Text(
                     'Sign in',

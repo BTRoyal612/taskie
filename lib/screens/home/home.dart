@@ -21,6 +21,7 @@ class Home extends StatelessWidget {
     void _showAddTaskPanel() {
       showModalBottomSheet<void>(context: context, builder: (context) {
         return Container(
+          color: Colors.brown[50],
           padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 60.0),
           child: AddTask(),
         );
@@ -34,7 +35,7 @@ class Home extends StatelessWidget {
           backgroundColor: Colors.brown[50],
           appBar: AppBar(
             title: Text('Taskie'),
-            backgroundColor: Colors.pinkAccent[200],
+            backgroundColor: Colors.pink[300],
             elevation: 0.0,
             actions: <Widget>[
               TextButton.icon(
